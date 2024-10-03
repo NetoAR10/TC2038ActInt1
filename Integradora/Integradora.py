@@ -131,7 +131,7 @@ for i in range(len(patrones)):
             print("(false) cadena no encontrada en la transmision")
 
 
-def buscar_palindromo_mas_largo(texto):
+def buscar_palindromo_mas_largo(texto): #Algoritmo Manacher
     texto_modificado = '#' + '#'.join(texto) + '#'
     n = len(texto_modificado)
     p = [0] * n
@@ -171,49 +171,7 @@ if arhivo1:
 if archivo2:
     inicio, fin, palindromo = buscar_palindromo_mas_largo(texto2)
     print(f"Palíndromo más largo en Transmission2: {palindromo} (Inicio: {inicio}, Fin: {fin})\n")
-    
-
-def buscar_palindromo_mas_largo(texto):
-    texto_modificado = '#' + '#'.join(texto) + '#'
-    n = len(texto_modificado)
-    p = [0] * n
-    centro = 0
-    radio = 0
-    max_longitud = 0
-    max_pos = 0
-
-    for i in range(n):
-        espejo = 2 * centro - i
-        if i < radio:
-            p[i] = min(radio - i, p[espejo])
-
-        while i + p[i] + 1 < n and i - p[i] - 1 >= 0 and texto_modificado[i + p[i] + 1] == texto_modificado[i - p[i] - 1]:
-            p[i] += 1
-
-        if i + p[i] > radio:
-            centro = i
-            radio = i + p[i]
-
-        if p[i] > max_longitud:
-            max_longitud = p[i]
-            max_pos = i
-
-    inicio = (max_pos - max_longitud) // 2
-    fin = inicio + max_longitud - 1
-    palindromo = texto[inicio:fin+1]
-    
-    return inicio + 1, fin + 1, palindromo 
-
-# Palindromos
-print("\nP A L I N D O R M O S")
-if arhivo1:
-    inicio, fin, palindromo = buscar_palindromo_mas_largo(texto)
-    print(f"Palíndromo más largo en Transmission1: {palindromo} (Inicio: {inicio}, Fin: {fin})")
-
-if archivo2:
-    inicio, fin, palindromo = buscar_palindromo_mas_largo(texto2)
-    print(f"Palíndromo más largo en Transmission2: {palindromo} (Inicio: {inicio}, Fin: {fin})\n")
-    
+        
 
 # Buscar cadena más grande entre dos textos
 if (arhivo1 and archivo2):
