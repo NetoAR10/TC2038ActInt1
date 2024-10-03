@@ -1,34 +1,5 @@
 import numpy as np
 import os
-#Funcion poara buscar palindromo
-def buscar_palindromo_mas_largo(texto):
-    texto_modificado = '#' + '#'.join(texto) + '#'
-    n = len(texto_modificado)
-    p = [0] * n
-    centro = 0
-    radio = 0
-    max_longitud = 0
-    max_pos = 0
-
-    for i in range(n):
-        espejo = 2 * centro - i
-        if i < radio:
-            p[i] = min(radio - i, p[espejo])
-
-        while i + p[i] + 1 < n and i - p[i] - 1 >= 0 and texto_modificado[i + p[i] + 1] == texto_modificado[i - p[i] - 1]:
-            p[i] += 1
-
-        if i + p[i] > radio:
-            centro = i
-            radio = i + p[i]
-
-        if p[i] > max_longitud:
-            max_longitud = p[i]
-            max_pos = i
-
-    inicio = (max_pos - max_longitud) // 2
-    fin = inicio + max_longitud - 1
-    return inicio + 1, fin + 1 
 
 # Leer texto transmission 1 y transmission 2
 arhivo1=False
