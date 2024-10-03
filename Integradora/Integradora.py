@@ -131,7 +131,7 @@ for i in range(len(patrones)):
             print("(false) cadena no encontrada en la transmision")
 
 
-def buscar_palindromo_mas_largo(texto): #Algoritmo Manacher
+def buscar_palindromo_mas_largo(texto): #Algoritmo Manacher O(n)
     texto_modificado = '#' + '#'.join(texto) + '#'
     n = len(texto_modificado)
     p = [0] * n
