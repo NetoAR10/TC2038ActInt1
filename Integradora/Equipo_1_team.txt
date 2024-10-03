@@ -1,0 +1,3 @@
+Kevin Josué Martínez Leyva //  A01067611 detección de patrón en una cadena.
+José Antonio López Saldaña // A01710367 detección de palindromos más grande dentro de una cadena.
+Ernesto Acosta Ruiz // A01364982 detección de substring compartido más grande entre dos cadenas.
