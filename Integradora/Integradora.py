@@ -93,10 +93,10 @@ for i in range(len(patrones)):
                 y+=1
             else:
                 if(len(patro)==cont):
-                    Resultados.append(a)
+                    Resultados.append(a-len(patro))
         if(Resultados):
             for i in Resultados:
-                print("(true) Posición inicial: "+str(i+1)+" Posición final: "+str(i+1+len(patro)) )
+                print("(true) Posición inicial: "+str(i)+" Posición final: "+str(i+len(patro)-1))
         else:
             print("(false) cadena no encontrada en la transmision")
 
@@ -123,10 +123,10 @@ for i in range(len(patrones)):
                 y+=1
             else:
                 if(len(patro)==cont):
-                    Resultados.append(a)
+                    Resultados.append(a-len(patro))
         if(Resultados):
             for i in Resultados:
-                print("(true) Posición inicial: "+str(i+1)+" Posición final: "+str(i+1+len(patro)) )
+                print("(true) Posición inicial: "+str(i)+" Posición final: "+str(i+len(patro)-1))
         else:
             print("(false) cadena no encontrada en la transmision")
 
